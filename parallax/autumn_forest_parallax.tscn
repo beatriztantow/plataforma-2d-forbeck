@@ -65,7 +65,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 576, 208)
 
 [node name="LeafTop" type="ParallaxLayer" parent="." unique_id=1916286682]
-motion_scale = Vector2(1.2, 1.2)
+motion_scale = Vector2(1.2, 0)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="LeafTop" unique_id=1072540696]

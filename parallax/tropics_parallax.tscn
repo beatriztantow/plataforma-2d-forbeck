@@ -34,7 +34,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 576, 208)
 
 [node name="FloatingClouds" type="ParallaxLayer" parent="." unique_id=150172815]
-motion_scale = Vector2(0.1, 0.1)
+motion_scale = Vector2(0.1, 0.05)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="FloatingClouds" unique_id=1645813217]
@@ -45,7 +45,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 576, 208)
 
 [node name="Clouds" type="ParallaxLayer" parent="." unique_id=695329022]
-motion_scale = Vector2(0.2, 0.2)
+motion_scale = Vector2(0.2, 0.1)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Clouds" unique_id=78526640]
@@ -56,7 +56,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 576, 208)
 
 [node name="Water" type="ParallaxLayer" parent="." unique_id=1658892349]
-motion_scale = Vector2(0.3, 0.3)
+motion_scale = Vector2(0.3, 0.15)
 motion_mirroring = Vector2(288, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Water" unique_id=605838167]

@@ -14,45 +14,63 @@ motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="DistantTrees" unique_id=78526640]
+texture_repeat = 2
 texture = ExtResource("1_qguwi")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="TreeRow2" type="ParallaxLayer" parent="." unique_id=150172815]
 motion_scale = Vector2(0.2, 0.2)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="TreeRow2" unique_id=1645813217]
+texture_repeat = 2
 texture = ExtResource("2_jxcu6")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="TreeRow1" type="ParallaxLayer" parent="." unique_id=1658892349]
 motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="TreeRow1" unique_id=61685564]
+texture_repeat = 2
 texture = ExtResource("3_w3dlq")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="BottomLeafPiles" type="ParallaxLayer" parent="." unique_id=561039957]
 motion_scale = Vector2(0.4, 0.4)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="BottomLeafPiles" unique_id=510763301]
+texture_repeat = 2
 texture = ExtResource("4_43rwh")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="Trees" type="ParallaxLayer" parent="." unique_id=1706177371]
 motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Trees" unique_id=1146889949]
+texture_repeat = 2
 texture = ExtResource("5_7f0so")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="LeafTop" type="ParallaxLayer" parent="." unique_id=1916286682]
 motion_scale = Vector2(1.2, 1.2)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="LeafTop" unique_id=1072540696]
+texture_repeat = 2
 texture = ExtResource("6_bq3rr")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)

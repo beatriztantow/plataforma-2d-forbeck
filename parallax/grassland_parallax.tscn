@@ -13,37 +13,52 @@ motion_scale = Vector2(0, 0)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sky" unique_id=1072540696]
+texture_repeat = 2
 texture = ExtResource("1_hbuvl")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="Cloud2" type="ParallaxLayer" parent="." unique_id=695329022]
 motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Cloud2" unique_id=78526640]
+texture_repeat = 2
 texture = ExtResource("2_xdqik")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="Cloud1" type="ParallaxLayer" parent="." unique_id=150172815]
 motion_scale = Vector2(0.2, 0.2)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Cloud1" unique_id=1645813217]
+texture_repeat = 2
 texture = ExtResource("3_5tueu")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="Hills" type="ParallaxLayer" parent="." unique_id=1658892349]
 motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Hills" unique_id=61685564]
+texture_repeat = 2
 texture = ExtResource("4_arccs")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
 
 [node name="ForegroundScenery" type="ParallaxLayer" parent="." unique_id=561039957]
 motion_scale = Vector2(0.4, 0.4)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ForegroundScenery" unique_id=510763301]
+texture_repeat = 2
 texture = ExtResource("5_6s8o6")
 centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)

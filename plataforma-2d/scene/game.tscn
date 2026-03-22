@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://doc61wlw1ucb7" path="res://entities/player.tscn" id="1_5kiuu"]
 [ext_resource type="Texture2D" uid="uid://bqxbsrp6ql8l" path="res://sprites/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="2_dbls1"]
+[ext_resource type="Texture2D" uid="uid://debl3w1ah78e5" path="res://sprites/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="3_p1ry8"]
+[ext_resource type="Texture2D" uid="uid://cx4hw4w06c2dk" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Flowers (16 x 16).png" id="4_xlg7c"]
+[ext_resource type="Texture2D" uid="uid://1otteop4b51g" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/House (112 x 96).png" id="5_qpk70"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33cqm"]
 texture = ExtResource("2_dbls1")
@@ -76,11 +79,67 @@ texture = ExtResource("2_dbls1")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_33cqm")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ll5lq"]
+texture = ExtResource("3_p1ry8")
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+1:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+14:5/0 = 0
+16:5/0 = 0
+18:5/0 = 0
+1:1/size_in_atlas = Vector2i(3, 3)
+1:1/0 = 0
+5:1/size_in_atlas = Vector2i(3, 3)
+5:1/0 = 0
+9:1/size_in_atlas = Vector2i(3, 3)
+9:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_17rxn"]
+texture = ExtResource("4_xlg7c")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yq8tf"]
+texture = ExtResource("5_qpk70")
+0:0/size_in_atlas = Vector2i(7, 6)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+8:0/size_in_atlas = Vector2i(7, 6)
+8:0/0 = 0
+8:0/0/texture_origin = Vector2i(0, 8)
+
+[sub_resource type="TileSet" id="TileSet_ym5sv"]
+sources/0 = SubResource("TileSetAtlasSource_ll5lq")
+sources/1 = SubResource("TileSetAtlasSource_17rxn")
+sources/2 = SubResource("TileSetAtlasSource_yq8tf")
+
 [node name="Game" type="Node2D" unique_id=162141984]
 
 [node name="Player" parent="." unique_id=452900925 instance=ExtResource("1_5kiuu")]
 position = Vector2(17, 120)
 
-[node name="Terrain" type="TileMapLayer" parent="." unique_id=1016546583]
+[node name="Tiles" type="Node2D" parent="." unique_id=546238995]
+
+[node name="Terrain" type="TileMapLayer" parent="Tiles" unique_id=1016546583]
 tile_map_data = PackedByteArray("AAACAAgAAAACAAMAAAADAAgAAAACAAMAAAAOAAgAAAACAAMAAAAPAAgAAAACAAMAAAARAAgAAAACAAMAAAAAAAkAAAABAAQAAAADAAkAAAACAAQAAAARAAkAAAACAAQAAAAQAAkAAAACAAQAAAAPAAkAAAACAAQAAAAOAAkAAAACAAQAAAANAAkAAAACAAQAAAAMAAkAAAACAAQAAAALAAkAAAACAAQAAAAKAAkAAAACAAQAAAABAAgAAAACAAMAAAABAAkAAAACAAQAAAACAAkAAAACAAQAAAANAAgAAAACAAMAAAAMAAgAAAACAAMAAAALAAgAAAACAAMAAAAKAAgAAAACAAMAAAAQAAgAAAACAAMAAAASAAgAAAACAAMAAAASAAkAAAACAAQAAAAUAAgAAAACAAMAAAAUAAkAAAACAAQAAAAVAAgAAAAHAAMAAAAVAAkAAAAHAAQAAAAXAAcAAAAPAAMAAAAZAAYAAAAJAAMAAAAaAAYAAAANAAMAAAAcAAgAAAABAAMAAAAcAAkAAAABAAQAAAAdAAgAAAACAAMAAAAdAAkAAAACAAQAAAAeAAYAAAADAAEAAAAeAAcAAAADAAIAAAAeAAgAAAACAAMAAAAeAAkAAAACAAQAAAAfAAYAAAAEAAEAAAAfAAcAAAAEAAIAAAAfAAgAAAACAAMAAAAfAAkAAAACAAQAAAAgAAYAAAAEAAEAAAAgAAcAAAAEAAgAAAAgAAgAAAACAAMAAAAgAAkAAAACAAQAAAAhAAYAAAAFAAEAAAAhAAcAAAAFAAIAAAAhAAgAAAACAAMAAAAhAAkAAAACAAQAAAAiAAgAAAACAAMAAAAiAAkAAAACAAQAAAAjAAgAAAAHAAMAAAAjAAkAAAAHAAQAAAATAAgAAAACAAMAAAATAAkAAAACAAQAAAAJAAgAAAACAAMAAAAJAAkAAAACAAQAAAAIAAgAAAACAAMAAAAIAAkAAAACAAQAAAAHAAgAAAACAAMAAAAHAAkAAAACAAQAAAAGAAgAAAACAAMAAAAGAAkAAAACAAQAAAAFAAgAAAACAAMAAAAFAAkAAAACAAQAAAAEAAgAAAACAAMAAAAEAAkAAAACAAQAAAARAAcAAAADAAIAAAASAAYAAAAEAAEAAAASAAcAAAAEAAIAAAATAAYAAAAEAAEAAAATAAcAAAAEAAgAAAAUAAYAAAAFAAEAAAAUAAcAAAAFAAIAAAARAAYAAAADAAEAAAAAAAgAAAABAAMAAAA=")
 tile_set = SubResource("TileSet_xwcet")
+
+[node name="Decoration" type="TileMapLayer" parent="Tiles" unique_id=621332377]
+tile_map_data = PackedByteArray("AAAIAAUAAgAAAAAAAAALAAYAAAABAAEAAAADAAYAAAAJAAEAAAAEAAcAAAADAAUAAAASAAUAAAABAAUAAAANAAcAAAABAAUAAAA=")
+tile_set = SubResource("TileSet_ym5sv")

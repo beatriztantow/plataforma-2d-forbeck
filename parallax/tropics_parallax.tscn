@@ -6,6 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://dho85wm1t5rd4" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png" id="4_lfj4j"]
 [ext_resource type="Texture2D" uid="uid://dwrdjoj7e1qg3" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png" id="5_vngx4"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_acb3b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vngx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lfj4j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="TropicsParallax" type="ParallaxBackground" unique_id=119316801]
 
 [node name="Sky" type="ParallaxLayer" parent="." unique_id=1916286682]
@@ -19,19 +33,8 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 576, 208)
 
-[node name="Clouds" type="ParallaxLayer" parent="." unique_id=695329022]
-motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(288, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Clouds" unique_id=78526640]
-texture_repeat = 2
-texture = ExtResource("2_m8hfp")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 576, 208)
-
 [node name="FloatingClouds" type="ParallaxLayer" parent="." unique_id=150172815]
-motion_scale = Vector2(0.2, 0.2)
+motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="FloatingClouds" unique_id=1645813217]
@@ -41,24 +44,32 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 576, 208)
 
-[node name="WatersVersion2" type="ParallaxLayer" parent="." unique_id=1658892349]
+[node name="Clouds" type="ParallaxLayer" parent="." unique_id=695329022]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Clouds" unique_id=78526640]
+texture_repeat = 2
+texture = ExtResource("2_m8hfp")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="Water" type="ParallaxLayer" parent="." unique_id=1658892349]
 motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(288, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="WatersVersion2" unique_id=61685564]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Water" unique_id=605838167]
 texture_repeat = 2
-texture = ExtResource("4_lfj4j")
+sprite_frames = SubResource("SpriteFrames_acb3b")
+autoplay = "default"
+frame_progress = 0.897979
 centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 576, 208)
 
-[node name="WatersVersion1" type="ParallaxLayer" parent="." unique_id=561039957]
-motion_scale = Vector2(0.4, 0.4)
-motion_mirroring = Vector2(288, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="WatersVersion1" unique_id=510763301]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Water" unique_id=1014127163]
 texture_repeat = 2
-texture = ExtResource("5_vngx4")
+position = Vector2(576, 0)
+sprite_frames = SubResource("SpriteFrames_acb3b")
+autoplay = "default"
+frame_progress = 0.70475996
 centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 576, 208)

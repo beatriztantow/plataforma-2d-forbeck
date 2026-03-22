@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cx4hw4w06c2dk" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Flowers (16 x 16).png" id="2_k56fq"]
 [ext_resource type="Texture2D" uid="uid://1otteop4b51g" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/House (112 x 96).png" id="3_b4fdq"]
 [ext_resource type="Texture2D" uid="uid://bjjwnkquysw7c" path="res://sprites/Seasonal Tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="4_k56fq"]
+[ext_resource type="Texture2D" uid="uid://brym8an5t68er" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Autumn_entities (16 x 16).png" id="5_b4fdq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ll5lq"]
 texture = ExtResource("1_4pksi")
@@ -76,8 +77,36 @@ texture = ExtResource("4_k56fq")
 12:6/0 = 0
 12:6/0/z_index = 1
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hjahj"]
+texture = ExtResource("5_b4fdq")
+1:1/size_in_atlas = Vector2i(3, 3)
+1:1/0 = 0
+5:1/size_in_atlas = Vector2i(3, 3)
+5:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+14:4/0 = 0
+16:4/0 = 0
+18:4/0 = 0
+1:5/0 = 0
+3:5/0 = 0
+
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_ll5lq")
 sources/1 = SubResource("TileSetAtlasSource_17rxn")
 sources/2 = SubResource("TileSetAtlasSource_yq8tf")
 sources/3 = SubResource("TileSetAtlasSource_b4fdq")
+sources/4 = SubResource("TileSetAtlasSource_hjahj")

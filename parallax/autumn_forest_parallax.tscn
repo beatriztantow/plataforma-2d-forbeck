@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://c4rxt54kvqtuo"]
+
+[ext_resource type="Texture2D" uid="uid://b02ae6ppigyh7" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/6 - Distant_trees.png" id="1_qguwi"]
+[ext_resource type="Texture2D" uid="uid://bhwpi6i35veuo" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/5 - Tree_row_BG_2.png" id="2_jxcu6"]
+[ext_resource type="Texture2D" uid="uid://cv24ppayck3n6" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/4 - Tree_row_BG_1.png" id="3_w3dlq"]
+[ext_resource type="Texture2D" uid="uid://dai1bj45v6epi" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="4_43rwh"]
+[ext_resource type="Texture2D" uid="uid://14jpewx2sc0y" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/2 - Trees.png" id="5_7f0so"]
+[ext_resource type="Texture2D" uid="uid://wd4d35awqajn" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/1 - Leaf_top.png" id="6_bq3rr"]
+
+[node name="AutumnForestParallax" type="ParallaxBackground" unique_id=119316801]
+
+[node name="DistantTrees" type="ParallaxLayer" parent="." unique_id=695329022]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="DistantTrees" unique_id=78526640]
+texture = ExtResource("1_qguwi")
+centered = false
+
+[node name="TreeRow2" type="ParallaxLayer" parent="." unique_id=150172815]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeRow2" unique_id=1645813217]
+texture = ExtResource("2_jxcu6")
+centered = false
+
+[node name="TreeRow1" type="ParallaxLayer" parent="." unique_id=1658892349]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeRow1" unique_id=61685564]
+texture = ExtResource("3_w3dlq")
+centered = false
+
+[node name="BottomLeafPiles" type="ParallaxLayer" parent="." unique_id=561039957]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BottomLeafPiles" unique_id=510763301]
+texture = ExtResource("4_43rwh")
+centered = false
+
+[node name="Trees" type="ParallaxLayer" parent="." unique_id=1706177371]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Trees" unique_id=1146889949]
+texture = ExtResource("5_7f0so")
+centered = false
+
+[node name="LeafTop" type="ParallaxLayer" parent="." unique_id=1916286682]
+motion_scale = Vector2(1.2, 1.2)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="LeafTop" unique_id=1072540696]
+texture = ExtResource("6_bq3rr")
+centered = false

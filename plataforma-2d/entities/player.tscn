@@ -180,6 +180,7 @@ height = 16.0
 script = ExtResource("1_merdl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=767520764]
+z_index = 1
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_i623q")
 animation = &"jump"
@@ -187,7 +188,6 @@ autoplay = "idle"
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=751217798]
-z_index = 1
 position = Vector2(2, 0)
 shape = SubResource("CapsuleShape2D_u3f3p")
 

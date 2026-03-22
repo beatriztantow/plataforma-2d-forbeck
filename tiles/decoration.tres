@@ -74,6 +74,7 @@ texture = ExtResource("4_k56fq")
 12:5/0 = 0
 12:5/0/z_index = 2
 12:6/0 = 0
+12:6/0/z_index = 1
 
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_ll5lq")

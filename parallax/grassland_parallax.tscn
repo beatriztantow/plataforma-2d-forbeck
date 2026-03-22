@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://d38b6wbrfqxo7"]
+
+[ext_resource type="Texture2D" uid="uid://8474gn7jvcvd" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png" id="1_hbuvl"]
+[ext_resource type="Texture2D" uid="uid://bfs0ouxb5iq43" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="2_xdqik"]
+[ext_resource type="Texture2D" uid="uid://pr8twsp2qjcn" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="3_5tueu"]
+[ext_resource type="Texture2D" uid="uid://dwnac148lw6ve" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="4_arccs"]
+[ext_resource type="Texture2D" uid="uid://dqi08y3soaasq" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="5_6s8o6"]
+
+[node name="GrasslandParallax" type="ParallaxBackground" unique_id=119316801]
+
+[node name="Sky" type="ParallaxLayer" parent="." unique_id=1916286682]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky" unique_id=1072540696]
+texture = ExtResource("1_hbuvl")
+centered = false
+
+[node name="Cloud2" type="ParallaxLayer" parent="." unique_id=695329022]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cloud2" unique_id=78526640]
+texture = ExtResource("2_xdqik")
+centered = false
+
+[node name="Cloud1" type="ParallaxLayer" parent="." unique_id=150172815]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cloud1" unique_id=1645813217]
+texture = ExtResource("3_5tueu")
+centered = false
+
+[node name="Hills" type="ParallaxLayer" parent="." unique_id=1658892349]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Hills" unique_id=61685564]
+texture = ExtResource("4_arccs")
+centered = false
+
+[node name="ForegroundScenery" type="ParallaxLayer" parent="." unique_id=561039957]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ForegroundScenery" unique_id=510763301]
+texture = ExtResource("5_6s8o6")
+centered = false

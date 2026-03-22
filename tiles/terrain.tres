@@ -4,6 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://q8gnwyk1edhw" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="2_udkip"]
 [ext_resource type="Texture2D" uid="uid://c35f0jyigqwki" path="res://sprites/Seasonal Tilesets/3 - Tropics/Terrain (16 x 16).png" id="3_8t5ty"]
 
+[sub_resource type="TileMapPattern" id="TileMapPattern_8t5ty"]
+tile_data = PackedInt32Array(0, 589824, 3, 1, 655360, 3, 2, 851968, 3)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_selcm"]
+tile_data = PackedInt32Array(0, 589825, 3, 1, 655361, 3, 2, 851969, 3)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_4mtcj"]
+tile_data = PackedInt32Array(0, 589826, 3, 1, 655362, 3, 2, 851970, 3)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33cqm"]
 texture = ExtResource("1_jtj14")
 4:1/0 = 0
@@ -253,3 +262,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_33cqm")
 sources/1 = SubResource("TileSetAtlasSource_8t5ty")
 sources/2 = SubResource("TileSetAtlasSource_selcm")
+pattern_0 = SubResource("TileMapPattern_8t5ty")
+pattern_1 = SubResource("TileMapPattern_selcm")
+pattern_2 = SubResource("TileMapPattern_4mtcj")

@@ -1,3 +1,70 @@
-[gd_scene format=3 uid="uid://ccmqashagbgs1"]
+[gd_scene format=4 uid="uid://ccmqashagbgs1"]
+
+[ext_resource type="PackedScene" uid="uid://doc61wlw1ucb7" path="res://entities/player.tscn" id="1_2xpkg"]
+[ext_resource type="TileSet" uid="uid://dhw5qvoo4tv31" path="res://tiles/terrain.tres" id="2_gbfvw"]
+[ext_resource type="Texture2D" uid="uid://b02ae6ppigyh7" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/6 - Distant_trees.png" id="3_gbfvw"]
+[ext_resource type="Texture2D" uid="uid://bhwpi6i35veuo" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/5 - Tree_row_BG_2.png" id="4_fk3cu"]
+[ext_resource type="Texture2D" uid="uid://cv24ppayck3n6" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/4 - Tree_row_BG_1.png" id="5_qxlj4"]
+[ext_resource type="Texture2D" uid="uid://dai1bj45v6epi" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="6_jo4av"]
+[ext_resource type="Texture2D" uid="uid://14jpewx2sc0y" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/2 - Trees.png" id="7_jxvlp"]
+[ext_resource type="Texture2D" uid="uid://wd4d35awqajn" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/1 - Leaf_top.png" id="8_qxlj4"]
 
 [node name="Forest" type="Node2D" unique_id=1092090189]
+
+[node name="Player" parent="." unique_id=452900925 instance=ExtResource("1_2xpkg")]
+position = Vector2(32, 184)
+
+[node name="Terrain" type="TileMapLayer" parent="." unique_id=164992897]
+position = Vector2(16, 16)
+tile_map_data = PackedByteArray("AAAAAAsAAQABAAMAAAAAAAwAAQABAAQAAAABAAsAAQACAAMAAAABAAwAAQACAAQAAAACAAsAAQACAAMAAAACAAwAAQACAAQAAAADAAsAAQACAAMAAAADAAwAAQACAAQAAAAEAAsAAQACAAMAAAAEAAwAAQACAAQAAAAFAAsAAQACAAMAAAAFAAwAAQACAAQAAAAGAAsAAQACAAMAAAAGAAwAAQACAAQAAAAHAAsAAQACAAMAAAAHAAwAAQACAAQAAAAIAAsAAQACAAMAAAAIAAwAAQACAAQAAAAJAAsAAQACAAMAAAAJAAwAAQACAAQAAAAKAAsAAQACAAMAAAAKAAwAAQACAAQAAAALAAsAAQACAAMAAAALAAwAAQACAAQAAAAMAAsAAQACAAMAAAAMAAwAAQACAAQAAAANAAsAAQACAAMAAAANAAwAAQACAAQAAAAOAAsAAQACAAMAAAAOAAwAAQACAAQAAAAPAAsAAQACAAMAAAAPAAwAAQACAAQAAAAQAAsAAQACAAMAAAAQAAwAAQACAAQAAAARAAsAAQACAAMAAAARAAwAAQACAAQAAAASAAsAAQACAAMAAAASAAwAAQACAAQAAAATAAsAAQACAAMAAAATAAwAAQACAAQAAAAUAAsAAQACAAMAAAAUAAwAAQACAAQAAAAVAAsAAQACAAMAAAAVAAwAAQACAAQAAAAWAAsAAQACAAMAAAAWAAwAAQACAAQAAAAXAAsAAQACAAMAAAAXAAwAAQACAAQAAAAYAAsAAQACAAMAAAAYAAwAAQACAAQAAAAZAAsAAQACAAMAAAAZAAwAAQACAAQAAAAaAAsAAQACAAMAAAAaAAwAAQACAAQAAAAbAAsAAQACAAMAAAAbAAwAAQACAAQAAAAcAAsAAQACAAMAAAAcAAwAAQACAAQAAAAdAAsAAQACAAMAAAAdAAwAAQACAAQAAAAeAAsAAQACAAMAAAAeAAwAAQACAAQAAAAfAAsAAQACAAMAAAAfAAwAAQACAAQAAAAgAAsAAQACAAMAAAAgAAwAAQACAAQAAAAhAAsAAQACAAMAAAAhAAwAAQACAAQAAAAiAAsAAQACAAMAAAAiAAwAAQACAAQAAAAjAAsAAQACAAMAAAAjAAwAAQACAAQAAAAkAAsAAQACAAMAAAAkAAwAAQACAAQAAAAlAAsAAQACAAMAAAAlAAwAAQACAAQAAAAmAAsAAQACAAMAAAAmAAwAAQACAAQAAAAnAAsAAQACAAMAAAAnAAwAAQACAAQAAAAoAAsAAQACAAMAAAAoAAwAAQACAAQAAAApAAsAAQACAAMAAAApAAwAAQACAAQAAAAqAAsAAQACAAMAAAAqAAwAAQACAAQAAAArAAsAAQACAAMAAAArAAwAAQACAAQAAAAsAAsAAQACAAMAAAAsAAwAAQACAAQAAAAtAAsAAQACAAMAAAAtAAwAAQACAAQAAAAuAAsAAQACAAMAAAAuAAwAAQACAAQAAAAvAAsAAQACAAMAAAAvAAwAAQACAAQAAAAwAAsAAQACAAMAAAAwAAwAAQACAAQAAAAxAAsAAQACAAMAAAAxAAwAAQACAAQAAAAyAAsAAQACAAMAAAAyAAwAAQACAAQAAAAzAAsAAQACAAMAAAAzAAwAAQACAAQAAAA0AAsAAQACAAMAAAA0AAwAAQACAAQAAAA1AAsAAQACAAMAAAA1AAwAAQACAAQAAAA2AAsAAQACAAMAAAA2AAwAAQACAAQAAAA3AAsAAQACAAMAAAA3AAwAAQACAAQAAAA4AAsAAQACAAMAAAA4AAwAAQACAAQAAAA5AAsAAQACAAMAAAA5AAwAAQACAAQAAAA6AAsAAQACAAMAAAA6AAwAAQACAAQAAAA7AAsAAQACAAMAAAA7AAwAAQACAAQAAAA8AAsAAQACAAMAAAA8AAwAAQACAAQAAAA9AAsAAQACAAMAAAA9AAwAAQACAAQAAAA+AAsAAQACAAMAAAA+AAwAAQACAAQAAAA/AAsAAQACAAMAAAA/AAwAAQACAAQAAABAAAsAAQACAAMAAABAAAwAAQACAAQAAABBAAsAAQACAAMAAABBAAwAAQACAAQAAABCAAsAAQACAAMAAABCAAwAAQACAAQAAABDAAsAAQACAAMAAABDAAwAAQACAAQAAABEAAsAAQACAAMAAABEAAwAAQACAAQAAABFAAsAAQACAAMAAABFAAwAAQACAAQAAABGAAsAAQACAAMAAABGAAwAAQACAAQAAABHAAsAAQACAAMAAABHAAwAAQACAAQAAABIAAsAAQACAAMAAABIAAwAAQACAAQAAABJAAsAAQACAAMAAABJAAwAAQACAAQAAABKAAsAAQACAAMAAABKAAwAAQACAAQAAABLAAsAAQACAAMAAABLAAwAAQACAAQAAABMAAsAAQACAAMAAABMAAwAAQACAAQAAABNAAsAAQACAAMAAABNAAwAAQACAAQAAABOAAsAAQACAAMAAABOAAwAAQACAAQAAABPAAsAAQACAAMAAABPAAwAAQACAAQAAABQAAsAAQACAAMAAABQAAwAAQACAAQAAABRAAsAAQACAAMAAABRAAwAAQACAAQAAABSAAsAAQACAAMAAABSAAwAAQACAAQAAABTAAsAAQAHAAMAAABTAAwAAQAHAAQAAAA=")
+tile_set = ExtResource("2_gbfvw")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=394634475]
+
+[node name="DistantTrees" type="ParallaxLayer" parent="ParallaxBackground" unique_id=918464745]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/DistantTrees" unique_id=1305854771]
+texture = ExtResource("3_gbfvw")
+centered = false
+
+[node name="TreeRow2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2140687491]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/TreeRow2" unique_id=247733379]
+texture = ExtResource("4_fk3cu")
+centered = false
+
+[node name="TreeRow1" type="ParallaxLayer" parent="ParallaxBackground" unique_id=213498186]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/TreeRow1" unique_id=271699530]
+texture = ExtResource("5_qxlj4")
+centered = false
+
+[node name="BottomLeafPiles" type="ParallaxLayer" parent="ParallaxBackground" unique_id=600238169]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/BottomLeafPiles" unique_id=425573377]
+texture = ExtResource("6_jo4av")
+centered = false
+
+[node name="Trees" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1861297226]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Trees" unique_id=880347122]
+texture = ExtResource("7_jxvlp")
+centered = false
+
+[node name="LeafTop" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1457449665]
+motion_scale = Vector2(1.2, 1.2)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/LeafTop" unique_id=317874200]
+texture = ExtResource("8_qxlj4")
+centered = false

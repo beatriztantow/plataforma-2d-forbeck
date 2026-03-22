@@ -1,10 +1,14 @@
 [gd_scene format=4 uid="uid://ccmqashagbgs1"]
 
+[ext_resource type="PackedScene" uid="uid://chotr1c56af2i" path="res://entities/camera.tscn" id="1_jmaba"]
 [ext_resource type="PackedScene" uid="uid://doc61wlw1ucb7" path="res://entities/player.tscn" id="1_yibc2"]
 [ext_resource type="TileSet" uid="uid://dhw5qvoo4tv31" path="res://tiles/terrain.tres" id="2_jmaba"]
 [ext_resource type="PackedScene" uid="uid://c4rxt54kvqtuo" path="res://parallax/autumn_forest_parallax.tscn" id="3_xqi52"]
 
 [node name="Forest" type="Node2D" unique_id=1092090189]
+
+[node name="Camera" parent="." unique_id=100438683 instance=ExtResource("1_jmaba")]
+position = Vector2(1, 0)
 
 [node name="Player" parent="." unique_id=452900925 instance=ExtResource("1_yibc2")]
 position = Vector2(32, 184)

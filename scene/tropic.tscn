@@ -1,11 +1,14 @@
 [gd_scene format=4 uid="uid://bgri2ifxye1hh"]
 
+[ext_resource type="PackedScene" uid="uid://chotr1c56af2i" path="res://entities/camera.tscn" id="1_mf6tq"]
 [ext_resource type="PackedScene" uid="uid://doc61wlw1ucb7" path="res://entities/player.tscn" id="1_ry6l7"]
 [ext_resource type="TileSet" uid="uid://dhw5qvoo4tv31" path="res://tiles/terrain.tres" id="2_4big0"]
 [ext_resource type="TileSet" uid="uid://dkhar7p18tlog" path="res://tiles/decoration.tres" id="3_4big0"]
 [ext_resource type="PackedScene" uid="uid://crbeurgdn3vra" path="res://parallax/tropics_parallax.tscn" id="3_mf6tq"]
 
 [node name="Tropic" type="Node2D" unique_id=1016848371]
+
+[node name="Camera" parent="." unique_id=100438683 instance=ExtResource("1_mf6tq")]
 
 [node name="Player" parent="." unique_id=452900925 instance=ExtResource("1_ry6l7")]
 position = Vector2(24, 168)

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ct02bt4wlylu4" path="res://scripts/player.gd" id="1_merdl"]
 [ext_resource type="Texture2D" uid="uid://bpndf2oqnpk0e" path="res://sprites/penguin/Idle (16 x 16).png" id="2_b0kkn"]
 [ext_resource type="Texture2D" uid="uid://cu0rb2rd25tu7" path="res://sprites/penguin/Ducking (16 x 16).png" id="2_qsoyl"]
+[ext_resource type="Texture2D" uid="uid://brjprmk8gpsql" path="res://sprites/penguin/Falling (16 x 16).png" id="3_6nm46"]
 [ext_resource type="Texture2D" uid="uid://djthi6hx3hbyn" path="res://sprites/penguin/Waddling (16 x 16).png" id="3_e4p34"]
 [ext_resource type="Texture2D" uid="uid://cf18axor74v3u" path="res://sprites/penguin/Jump (16 x 16).png" id="3_qly61"]
 [ext_resource type="Texture2D" uid="uid://dq5t1bi0aui7d" path="res://sprites/penguin/Sitting (16 x 16).png" id="4_qsoyl"]
@@ -71,6 +72,14 @@ animations = [{
 }],
 "loop": false,
 "name": &"ducking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6nm46")
+}],
+"loop": false,
+"name": &"fall",
 "speed": 5.0
 }, {
 "frames": [{
@@ -194,7 +203,7 @@ script = ExtResource("1_merdl")
 z_index = 1
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_i623q")
-animation = &"ducking"
+animation = &"fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=751217798]
 z_index = 2

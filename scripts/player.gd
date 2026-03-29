@@ -9,11 +9,14 @@ const JUMP_VELOCITY = -250.0
 
 var status: PlayerState
 var direction = 0
+var jump_count = 0
+var max_jump_count = 2
 
 enum PlayerState {
 	idle, 
 	walk,
 	jump,
+	fall,
 	ducking
 }
 
@@ -31,6 +34,8 @@ func _physics_process(delta: float) -> void:
 			walk_state()
 		PlayerState.jump:
 			jump_state()
+		PlayerState.fall:
+			fall_state()
 		PlayerState.ducking:
 			ducking_state()
 
@@ -64,6 +69,11 @@ func go_to_jump_state():
 	status = PlayerState.jump
 	animated_sprite.play("jump")
 	velocity.y = JUMP_VELOCITY
+	jump_count += 1
+
+func go_to_fall_state():
+	status = PlayerState.fall
+	animated_sprite.play("fall")
 
 func go_to_ducking_state():
 	status = PlayerState.ducking
@@ -104,7 +114,20 @@ func walk_state():
 
 func jump_state():
 	move()
+	
+	if Input.is_action_just_pressed("jump") && jump_count < max_jump_count:
+		go_to_jump_state()
+		return
+
+	if velocity.y > 0:
+		go_to_fall_state()
+		return
+
+func fall_state():
+	move()
+
 	if is_on_floor():
+		jump_count = 0
 		if velocity.x == 0:
 			go_to_idle_state()
 			return

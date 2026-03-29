@@ -185,9 +185,7 @@ script = ExtResource("1_merdl")
 z_index = 1
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_i623q")
-animation = &"jump"
-autoplay = "idle"
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=751217798]
 position = Vector2(2, 0)

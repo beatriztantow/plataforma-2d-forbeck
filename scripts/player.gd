@@ -1,17 +1,21 @@
 extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+
 
 const SPEED = 80.0
 const JUMP_VELOCITY = -250.0
 
+var status: PlayerState
+var direction = 0
 
 enum PlayerState {
 	idle, 
 	walk,
-	jump
+	jump,
+	ducking
 }
-var status: PlayerState
 
 func _ready() -> void:
 	go_to_idle_state()
@@ -27,15 +31,21 @@ func _physics_process(delta: float) -> void:
 			walk_state()
 		PlayerState.jump:
 			jump_state()
+		PlayerState.ducking:
+			ducking_state()
 
 	move_and_slide()
 
 func move():
-	var direction := Input.get_axis("left", "right")
+	update_direction()
+
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+func update_direction():
+	direction = Input.get_axis("left", "right")
 
 	if direction < 0:
 		animated_sprite.flip_h = true
@@ -55,6 +65,19 @@ func go_to_jump_state():
 	animated_sprite.play("jump")
 	velocity.y = JUMP_VELOCITY
 
+func go_to_ducking_state():
+	status = PlayerState.ducking
+	animated_sprite.play("ducking")
+	collision_shape.shape.radius = 5
+	collision_shape.shape.height = 10
+	collision_shape.position.y = 3
+
+func exit_from_ducking_state():
+	collision_shape.shape.radius = 6
+	collision_shape.shape.height = 16
+	collision_shape.position.y = 0
+	
+
 func idle_state():
 	move()
 	if velocity.x != 0:
@@ -63,6 +86,10 @@ func idle_state():
 
 	if Input.is_action_just_pressed("jump"):
 		go_to_jump_state()
+		return
+
+	if Input.is_action_pressed("ducking"):
+		go_to_ducking_state()
 		return
 
 func walk_state():
@@ -84,3 +111,10 @@ func jump_state():
 		else:
 			go_to_walk_state()
 			return
+
+func ducking_state():
+	update_direction ()
+	if Input.is_action_just_released("ducking"):
+		exit_from_ducking_state()
+		go_to_idle_state()
+		return

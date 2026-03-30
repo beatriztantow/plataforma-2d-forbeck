@@ -107,6 +107,10 @@ func walk_state():
 	if velocity.x == 0:
 		go_to_idle_state()
 		return
+		
+	if velocity.y > 0:
+		go_to_fall_state()
+		return
 
 	if Input.is_action_just_pressed("jump"):
 		go_to_jump_state()
@@ -134,6 +138,10 @@ func fall_state():
 		else:
 			go_to_walk_state()
 			return
+
+	if Input.is_action_just_pressed("jump") && jump_count < max_jump_count:
+		go_to_jump_state()
+		return
 
 func ducking_state():
 	update_direction ()

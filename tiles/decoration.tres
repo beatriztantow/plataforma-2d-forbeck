@@ -73,8 +73,10 @@ texture = ExtResource("4_k56fq")
 12:5/animation_frame_0/duration = 1.0
 12:5/animation_frame_1/duration = 1.0
 12:5/0 = 0
+12:5/0/modulate = Color(1, 1, 1, 0.78431374)
 12:5/0/z_index = 2
 12:6/0 = 0
+12:6/0/modulate = Color(1, 1, 1, 0.78431374)
 12:6/0/z_index = 1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hjahj"]

@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 @export var aceleration = 400
 @export var deceleration = 300
-@export var max_speed = 80.0
+@export var max_speed = 100.0
 
 const JUMP_VELOCITY = -250.0
 
@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 		PlayerState.fall:
 			fall_state(delta)
 		PlayerState.ducking:
-			ducking_state()
+			ducking_state(delta)
 
 	move_and_slide()
 
@@ -147,7 +147,7 @@ func fall_state(delta: float):
 		go_to_jump_state()
 		return
 
-func ducking_state():
+func ducking_state(_delta: float):
 	update_direction ()
 	if Input.is_action_just_released("ducking"):
 		exit_from_ducking_state()

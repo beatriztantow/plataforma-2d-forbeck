@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://djthi6hx3hbyn" path="res://sprites/penguin/Waddling (16 x 16).png" id="3_e4p34"]
 [ext_resource type="Texture2D" uid="uid://cf18axor74v3u" path="res://sprites/penguin/Jump (16 x 16).png" id="3_qly61"]
 [ext_resource type="Texture2D" uid="uid://dq5t1bi0aui7d" path="res://sprites/penguin/Sitting (16 x 16).png" id="4_qsoyl"]
+[ext_resource type="Texture2D" uid="uid://mo4l0spsy8x5" path="res://sprites/penguin/Belly_Sliding (16 x 16).png" id="7_i623q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4p34"]
 atlas = ExtResource("2_b0kkn")
@@ -39,6 +40,18 @@ region = Rect2(0, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_oprnr"]
 atlas = ExtResource("4_qsoyl")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rie4"]
+atlas = ExtResource("7_i623q")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp3pk"]
+atlas = ExtResource("7_i623q")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgp7q"]
+atlas = ExtResource("7_i623q")
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i623q"]
 atlas = ExtResource("3_e4p34")
@@ -168,6 +181,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_8rie4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dp3pk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgp7q")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_i623q")
 }, {
 "duration": 1.0,
@@ -203,7 +230,8 @@ script = ExtResource("1_merdl")
 z_index = 1
 position = Vector2(2, 0)
 sprite_frames = SubResource("SpriteFrames_i623q")
-animation = &"fall"
+animation = &"slide"
+frame_progress = 0.21311882
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=751217798]
 z_index = 2

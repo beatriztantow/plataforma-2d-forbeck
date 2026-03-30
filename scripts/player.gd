@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 @export var aceleration = 400
 @export var deceleration = 300
+@export var slide_deceleration = 50
 @export var max_speed = 100.0
 
 const JUMP_VELOCITY = -250.0
@@ -19,7 +20,8 @@ enum PlayerState {
 	walk,
 	jump,
 	fall,
-	ducking
+	ducking,
+	slide
 }
 
 func _ready() -> void:
@@ -48,6 +50,8 @@ func _physics_process(delta: float) -> void:
 			fall_state(delta)
 		PlayerState.ducking:
 			ducking_state(delta)
+		PlayerState.slide:
+			slide_state(delta)
 
 	move_and_slide()
 
@@ -81,15 +85,18 @@ func go_to_fall_state():
 func go_to_ducking_state():
 	status = PlayerState.ducking
 	animated_sprite.play("ducking")
-	collision_shape.shape.radius = 5
-	collision_shape.shape.height = 10
-	collision_shape.position.y = 3
+	set_small_collider()
+
+func go_to_slide_state():
+	status = PlayerState.slide
+	animated_sprite.play("slide")
+	set_small_collider()
 
 func exit_from_ducking_state():
-	collision_shape.shape.radius = 6
-	collision_shape.shape.height = 16
-	collision_shape.position.y = 0
-	
+	set_large_collider()
+
+func exit_from_slide_state():
+	set_large_collider()
 
 func idle_state(delta: float):
 	move(delta)
@@ -118,6 +125,10 @@ func walk_state(delta: float):
 
 	if Input.is_action_just_pressed("jump"):
 		go_to_jump_state()
+		return
+
+	if Input.is_action_just_pressed("slide"):
+		go_to_slide_state()
 		return
 
 func jump_state(delta: float):
@@ -153,7 +164,29 @@ func ducking_state(_delta: float):
 		exit_from_ducking_state()
 		go_to_idle_state()
 		return
-		
+
+func slide_state(delta: float):
+	velocity.x = move_toward(velocity.x, 0, delta * slide_deceleration)
+
+	if Input.is_action_just_released("slide"):
+		exit_from_slide_state()
+		go_to_walk_state()
+		return
+
+	if velocity.x == 0:
+		exit_from_slide_state()
+		go_to_ducking_state()
+		return
+
 func can_jump() -> bool:
 	return jump_count < max_jump_count
 	
+func set_small_collider():
+	collision_shape.shape.radius = 5
+	collision_shape.shape.height = 10
+	collision_shape.position.y = 3
+
+func set_large_collider():
+	collision_shape.shape.radius = 6
+	collision_shape.shape.height = 16
+	collision_shape.position.y = 0

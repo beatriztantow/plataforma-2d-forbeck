@@ -3,8 +3,10 @@ extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
+@export var aceleration = 400
+@export var deceleration = 300
+@export var max_speed = 80.0
 
-const SPEED = 80.0
 const JUMP_VELOCITY = -250.0
 
 var status: PlayerState
@@ -23,31 +25,32 @@ enum PlayerState {
 func _ready() -> void:
 	go_to_idle_state()
 
+func move(delta: float):
+	update_direction()
+
+	if direction:
+		velocity.x = move_toward(velocity.x, direction * max_speed, aceleration * delta)
+	else:
+		velocity.x = move_toward(velocity.x, 0, deceleration * delta)
+
 func _physics_process(delta: float) -> void:	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
 	match status:
 		PlayerState.idle:
-			idle_state()
+			idle_state(delta)
 		PlayerState.walk:
-			walk_state()
+			walk_state(delta)
 		PlayerState.jump:
-			jump_state()
+			jump_state(delta)
 		PlayerState.fall:
-			fall_state()
+			fall_state(delta)
 		PlayerState.ducking:
 			ducking_state()
 
 	move_and_slide()
 
-func move():
-	update_direction()
-
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 func update_direction():
 	direction = Input.get_axis("left", "right")
@@ -88,8 +91,8 @@ func exit_from_ducking_state():
 	collision_shape.position.y = 0
 	
 
-func idle_state():
-	move()
+func idle_state(delta: float):
+	move(delta)
 	if velocity.x != 0:
 		go_to_walk_state()
 		return
@@ -102,8 +105,8 @@ func idle_state():
 		go_to_ducking_state()
 		return
 
-func walk_state():
-	move()
+func walk_state(delta: float):
+	move(delta)
 	if velocity.x == 0:
 		go_to_idle_state()
 		return
@@ -117,8 +120,8 @@ func walk_state():
 		go_to_jump_state()
 		return
 
-func jump_state():
-	move()
+func jump_state(delta: float):
+	move(delta)
 	
 	if Input.is_action_just_pressed("jump") && can_jump():
 		go_to_jump_state()
@@ -128,8 +131,8 @@ func jump_state():
 		go_to_fall_state()
 		return
 
-func fall_state():
-	move()
+func fall_state(delta: float):
+	move(delta)
 
 	if is_on_floor():
 		jump_count = 0

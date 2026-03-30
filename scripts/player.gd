@@ -108,7 +108,8 @@ func walk_state():
 		go_to_idle_state()
 		return
 		
-	if velocity.y > 0:
+	if !is_on_floor():
+		jump_count += 1
 		go_to_fall_state()
 		return
 
@@ -119,7 +120,7 @@ func walk_state():
 func jump_state():
 	move()
 	
-	if Input.is_action_just_pressed("jump") && jump_count < max_jump_count:
+	if Input.is_action_just_pressed("jump") && can_jump():
 		go_to_jump_state()
 		return
 
@@ -139,7 +140,7 @@ func fall_state():
 			go_to_walk_state()
 			return
 
-	if Input.is_action_just_pressed("jump") && jump_count < max_jump_count:
+	if Input.is_action_just_pressed("jump") && can_jump():
 		go_to_jump_state()
 		return
 
@@ -149,3 +150,7 @@ func ducking_state():
 		exit_from_ducking_state()
 		go_to_idle_state()
 		return
+		
+func can_jump() -> bool:
+	return jump_count < max_jump_count
+	

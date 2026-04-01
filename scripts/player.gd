@@ -143,7 +143,7 @@ func walk_state(delta: float):
 
 func jump_state(delta: float):
 	move(delta)
-	
+
 	if Input.is_action_just_pressed("jump") && can_jump():
 		go_to_jump_state()
 		return

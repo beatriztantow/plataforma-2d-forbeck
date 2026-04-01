@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://crbeurgdn3vra" path="res://parallax/tropics_parallax.tscn" id="3_mf6tq"]
 [ext_resource type="PackedScene" uid="uid://cecj7xl8fu86q" path="res://entities/level_end.tscn" id="6_pss51"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pss51"]
+size = Vector2(32, 8)
+
 [node name="Tropic" type="Node2D" unique_id=1016848371]
 
 [node name="Camera" parent="." unique_id=100438683 instance=ExtResource("1_mf6tq")]
@@ -30,3 +33,9 @@ tile_set = ExtResource("3_4big0")
 [node name="LevelEnd" parent="." unique_id=213744806 instance=ExtResource("6_pss51")]
 position = Vector2(840, 168)
 next_level = "game"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1378588030]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1370851682]
+position = Vector2(568, 76)
+shape = SubResource("RectangleShape2D_pss51")

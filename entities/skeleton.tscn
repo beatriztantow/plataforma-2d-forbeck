@@ -4,7 +4,28 @@
 [ext_resource type="Texture2D" uid="uid://1m6vsbpa3k03" path="res://sprites/skeleton/Standing_Idle (32 x 32).png" id="1_yag7t"]
 [ext_resource type="Texture2D" uid="uid://bduegajmat8u0" path="res://sprites/skeleton/Crumbling_Into_Bone_Pile (32 x 32).png" id="2_6hr2a"]
 [ext_resource type="Texture2D" uid="uid://vmmep4rrsi8o" path="res://sprites/skeleton/Standing (32 x 32).png" id="2_fpmxe"]
+[ext_resource type="Texture2D" uid="uid://bealblmjkqnaf" path="res://sprites/skeleton/Bone_Toss (32 x 32).png" id="2_j31jw"]
 [ext_resource type="Texture2D" uid="uid://cmbf638pk2prb" path="res://sprites/skeleton/Limping_Movement (32 x 32).png" id="5_j31jw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmakq"]
+atlas = ExtResource("2_j31jw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74kl1"]
+atlas = ExtResource("2_j31jw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chyv4"]
+atlas = ExtResource("2_j31jw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1ksj"]
+atlas = ExtResource("2_j31jw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhcs1"]
+atlas = ExtResource("2_j31jw")
+region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sdy1"]
 atlas = ExtResource("2_6hr2a")
@@ -96,6 +117,26 @@ region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0sdy1"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmakq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74kl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chyv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1ksj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhcs1")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0sdy1")
@@ -199,10 +240,10 @@ script = ExtResource("1_fpmxe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1591581196]
 sprite_frames = SubResource("SpriteFrames_0sdy1")
-animation = &"dead"
+animation = &"attack"
 autoplay = "idle"
-frame = 6
-frame_progress = 1.0
+frame = 2
+frame_progress = 0.37853923
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=561772643]
 position = Vector2(2, 3)
@@ -226,6 +267,11 @@ position = Vector2(10, 7)
 target_position = Vector2(0, 10)
 
 [node name="PlayerDetector" type="RayCast2D" parent="." unique_id=1929439556]
-position = Vector2(0, 3)
-target_position = Vector2(21, 0)
+position = Vector2(0, 13)
+target_position = Vector2(64, 0)
 collision_mask = 2
+
+[node name="BoneStartPosition" type="Node2D" parent="." unique_id=1521115484]
+position = Vector2(13, -3)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

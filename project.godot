@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Plataforma2D"
-run/main_scene="uid://dwfu2hd278el"
+run/main_scene="uid://ccmqashagbgs1"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

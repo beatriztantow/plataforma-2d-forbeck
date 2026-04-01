@@ -5,6 +5,7 @@
 [ext_resource type="TileSet" uid="uid://dhw5qvoo4tv31" path="res://tiles/terrain.tres" id="2_33cqm"]
 [ext_resource type="TileSet" uid="uid://dkhar7p18tlog" path="res://tiles/decoration.tres" id="3_xwcet"]
 [ext_resource type="PackedScene" uid="uid://d38b6wbrfqxo7" path="res://parallax/grassland_parallax.tscn" id="4_xwcet"]
+[ext_resource type="PackedScene" uid="uid://d1gnf7tfdk2pr" path="res://entities/skeleton.tscn" id="5_qpk70"]
 [ext_resource type="PackedScene" uid="uid://cecj7xl8fu86q" path="res://entities/level_end.tscn" id="6_xlg7c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1ry8"]
@@ -43,3 +44,15 @@ shape = SubResource("RectangleShape2D_p1ry8")
 [node name="LevelEnd" parent="." unique_id=213744806 instance=ExtResource("6_xlg7c")]
 position = Vector2(760, 168)
 next_level = "autumn_forest"
+
+[node name="Skeleton" parent="." unique_id=1844788134 instance=ExtResource("5_qpk70")]
+position = Vector2(96, 128)
+
+[node name="Skeleton2" parent="." unique_id=1526154324 instance=ExtResource("5_qpk70")]
+position = Vector2(144, 160)
+
+[node name="Skeleton3" parent="." unique_id=1135323288 instance=ExtResource("5_qpk70")]
+position = Vector2(312, 128)
+
+[node name="Skeleton4" parent="." unique_id=643961946 instance=ExtResource("5_qpk70")]
+position = Vector2(392, 16)
